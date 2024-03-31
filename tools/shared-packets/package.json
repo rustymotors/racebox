@@ -10,14 +10,17 @@
         }
     },
     "scripts": {
-        "build": "rm -rf dist && tsc",
-        "test": "node --test"
+        "build": "rimraf ./dist/ && tsc",
+        "test": "vitest"
     },
     "keywords": [],
     "author": "",
     "license": "",
     "devDependencies": {
-        "@tsconfig/node20": "^20.1.4",
-        "@types/node": "^20.12.2"
+        "@tsconfig/node20": "~20.1.4",
+        "@types/node": "~20.12.2",
+        "rimraf": "~5.0.5",
+        "typescript": "~5.4.3",
+        "vitest": "~1.4.0"
     }
 }
