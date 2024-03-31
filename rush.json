@@ -314,6 +314,10 @@
     {
       "packageName": "rm-shared-packets",
       "projectFolder": "tools/shared-packets"
+    },
+    {
+      "packageName": "rm-shared",
+      "projectFolder": "tools/shared"
     }
     // {
     //   /**
