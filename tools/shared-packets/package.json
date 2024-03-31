@@ -1,0 +1,23 @@
+{
+    "name": "rm-shared-packets",
+    "private": true,
+    "version": "1.0.0",
+    "description": "",
+    "type": "module",
+    "exports": {
+        ".": {
+            "import": "./index.js"
+        }
+    },
+    "scripts": {
+        "build": "rm -rf dist && tsc",
+        "test": "node --test"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "",
+    "devDependencies": {
+        "@tsconfig/node20": "^20.1.4",
+        "@types/node": "^20.12.2"
+    }
+}
