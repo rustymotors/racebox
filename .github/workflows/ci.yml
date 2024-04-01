@@ -14,8 +14,8 @@ jobs:
       - name: Git config user
         uses: snow-actions/git-config-user@v1.0.0
         with:
-          name: # Service Account's Name
-          email: # Service Account's Email Address
+          name: Molly Draven
+          email: drazi@duck.com
       - uses: actions/setup-node@v4
         with:
           node-version: 16
