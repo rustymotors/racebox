@@ -346,6 +346,10 @@
     {
       "packageName": "rm-patch",
       "projectFolder": "tools/patch"
+    },
+    {
+      "packageName": "rm-login",
+      "projectFolder": "tools/login"
     }
     // {
     //   /**

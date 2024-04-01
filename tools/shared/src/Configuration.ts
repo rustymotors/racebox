@@ -17,7 +17,14 @@ const DEFAULT_CONFIG: ConfigurationArgs = {
     publicKeyFile: "certificates/publickey.pem",
 };
 
-export class Configuration {
+export interface TConfiguration {
+    host: string;
+    certificateFile: string;
+    privateKeyFile: string;
+    publicKeyFile: string;
+}
+
+export class Configuration implements TConfiguration {
     certificateFile: string;
     privateKeyFile: string;
     publicKeyFile: string;
