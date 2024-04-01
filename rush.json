@@ -330,6 +330,10 @@
     {
       "packageName": "rm-persona",
       "projectFolder": "tools/persona"
+    },
+    {
+      "packageName": "rm-nps",
+      "projectFolder": "tools/nps"
     }
     // {
     //   /**

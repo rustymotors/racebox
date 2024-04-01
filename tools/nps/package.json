@@ -1,0 +1,29 @@
+{
+    "name": "rm-nps",
+    "private": true,
+    "version": "1.0.0",
+    "description": "",
+    "type": "module",
+    "exports": {
+        ".": {
+            "import": "./index.js"
+        }
+    },
+    "scripts": {
+        "build": "rimraf ./lib/ && tsc",
+        "test": "vitest"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "",
+    "devDependencies": {
+        "@tsconfig/node20": "~20.1.4",
+        "@types/node": "~20.12.2",
+        "rimraf": "~5.0.5",
+        "typescript": "~5.4.3",
+        "vitest": "~1.4.0"
+    },
+    "dependencies": {"@sentry/node":"~7.109.0","short-unique-id":"~5.0.3","pino":"~8.19.0","rm-shared":"workspace:*"
+
+    }
+}
