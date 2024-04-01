@@ -322,6 +322,14 @@
     {
       "packageName": "rm-shard",
       "projectFolder": "tools/shard"
+    },
+    {
+      "packageName": "rm-core",
+      "projectFolder": "tools/core"
+    },
+    {
+      "packageName": "rm-persona",
+      "projectFolder": "tools/persona"
     }
     // {
     //   /**
