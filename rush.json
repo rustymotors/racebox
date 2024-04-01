@@ -318,6 +318,10 @@
     {
       "packageName": "rm-shared",
       "projectFolder": "tools/shared"
+    },
+    {
+      "packageName": "rm-shard",
+      "projectFolder": "tools/shard"
     }
     // {
     //   /**

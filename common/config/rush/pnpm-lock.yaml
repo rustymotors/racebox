@@ -5,6 +5,23 @@ importers:
   .:
     specifiers: {}
 
+  ../../tools/shard:
+    specifiers:
+      '@tsconfig/node20': ~20.1.4
+      '@types/node': ~20.12.2
+      rimraf: ~5.0.5
+      rm-shared: workspace:*
+      typescript: ~5.4.3
+      vitest: ~1.4.0
+    dependencies:
+      rm-shared: link:../shared
+    devDependencies:
+      '@tsconfig/node20': 20.1.4
+      '@types/node': 20.12.2
+      rimraf: 5.0.5
+      typescript: 5.4.3
+      vitest: 1.4.0_@types+node@20.12.2
+
   ../../tools/shared:
     specifiers:
       '@tsconfig/node20': ~20.1.4
