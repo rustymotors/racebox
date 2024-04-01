@@ -334,7 +334,15 @@
     {
       "packageName": "rm-nps",
       "projectFolder": "tools/nps"
+    },
+    {
+      "packageName": "rm-database",
+      "projectFolder": "tools/database"
     }
+    // {
+    //   "packageName": "rm-transactions",
+    //   "projectFolder": "tools/transactions"
+    // }
     // {
     //   /**
     //    * The NPM package name of the project (must match package.json)
