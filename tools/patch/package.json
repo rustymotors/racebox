@@ -1,0 +1,27 @@
+{
+  "name": "rm-patch",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./index.js"
+    }
+  },
+  "scripts": {
+    "build": "rimraf ./lib/ && tsc",
+    "test": "vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "devDependencies": {
+    "@tsconfig/node20": "~20.1.4",
+    "@types/node": "~20.12.2",
+    "rimraf": "~5.0.5",
+    "typescript": "~5.4.3",
+    "vitest": "~1.4.0"
+  },
+  "dependencies": {"rm-shared":"workspace:*"}
+}

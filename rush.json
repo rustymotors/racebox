@@ -339,10 +339,10 @@
       "packageName": "rm-database",
       "projectFolder": "tools/database"
     },
-    // {
-    //   "packageName": "rm-transactions",
-    //   "projectFolder": "tools/transactions"
-    // }
+    {
+      "packageName": "rm-patch",
+      "projectFolder": "tools/patch"
+    }
     // {
     //   /**
     //    * The NPM package name of the project (must match package.json)

@@ -7,12 +7,14 @@ importers:
 
   ../../tools/core:
     specifiers:
+      '@sentry/node': ~7.109.0
       '@tsconfig/node20': ~20.1.4
       '@types/node': ~20.12.2
       rimraf: ~5.0.5
       typescript: ~5.4.3
       vitest: ~1.4.0
     devDependencies:
+      '@sentry/node': 7.109.0
       '@tsconfig/node20': 20.1.4
       '@types/node': 20.12.2
       rimraf: 5.0.5
@@ -65,8 +67,26 @@ importers:
       typescript: 5.4.3
       vitest: 1.4.0_@types+node@20.12.2
 
+  ../../tools/patch:
+    specifiers:
+      '@tsconfig/node20': ~20.1.4
+      '@types/node': ~20.12.2
+      rimraf: ~5.0.5
+      rm-shared: workspace:*
+      typescript: ~5.4.3
+      vitest: ~1.4.0
+    dependencies:
+      rm-shared: link:../shared
+    devDependencies:
+      '@tsconfig/node20': 20.1.4
+      '@types/node': 20.12.2
+      rimraf: 5.0.5
+      typescript: 5.4.3
+      vitest: 1.4.0_@types+node@20.12.2
+
   ../../tools/persona:
     specifiers:
+      '@sentry/node': ~7.109.0
       '@tsconfig/node20': ~20.1.4
       '@types/node': ~20.12.2
       pino: ~8.19.0
@@ -80,6 +100,7 @@ importers:
       rm-core: link:../core
       rm-shared: link:../shared
     devDependencies:
+      '@sentry/node': 7.109.0
       '@tsconfig/node20': 20.1.4
       '@types/node': 20.12.2
       rimraf: 5.0.5
@@ -88,6 +109,7 @@ importers:
 
   ../../tools/shard:
     specifiers:
+      '@sentry/node': ~7.109.0
       '@tsconfig/node20': ~20.1.4
       '@types/node': ~20.12.2
       rimraf: ~5.0.5
@@ -97,6 +119,7 @@ importers:
     dependencies:
       rm-shared: link:../shared
     devDependencies:
+      '@sentry/node': 7.109.0
       '@tsconfig/node20': 20.1.4
       '@types/node': 20.12.2
       rimraf: 5.0.5
@@ -105,6 +128,7 @@ importers:
 
   ../../tools/shared:
     specifiers:
+      '@sentry/node': ~7.109.0
       '@tsconfig/node20': ~20.1.4
       '@types/node': ~20.12.2
       pino: ~8.19.0
@@ -114,6 +138,7 @@ importers:
     dependencies:
       pino: 8.19.0
     devDependencies:
+      '@sentry/node': 7.109.0
       '@tsconfig/node20': 20.1.4
       '@types/node': 20.12.2
       rimraf: 5.0.5
@@ -122,12 +147,14 @@ importers:
 
   ../../tools/shared-packets:
     specifiers:
+      '@sentry/node': ~7.109.0
       '@tsconfig/node20': ~20.1.4
       '@types/node': ~20.12.2
       rimraf: ~5.0.5
       typescript: ~5.4.3
       vitest: ~1.4.0
     devDependencies:
+      '@sentry/node': 7.109.0
       '@tsconfig/node20': 20.1.4
       '@types/node': 20.12.2
       rimraf: 5.0.5
