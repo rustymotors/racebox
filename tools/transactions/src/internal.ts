@@ -23,7 +23,7 @@ import {
     SerializedBuffer,
     OldServerMessage,
     ServerMessage,
-} from "../../shared";
+} from "rm-shared";
 
 /**
  *

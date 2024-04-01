@@ -340,6 +340,10 @@
       "projectFolder": "tools/database"
     },
     {
+      "packageName": "rm-transactions",
+      "projectFolder": "tools/transactions"
+    },
+    {
       "packageName": "rm-patch",
       "projectFolder": "tools/patch"
     }

@@ -1,5 +1,4 @@
-import { SerializedBuffer } from "../../shared";
-import type { RacingHistoryRecord } from "./_getPlayerRaceHistory";
+import { SerializedBuffer } from "rm-shared";
 
 export class PlayerRacingHistoryMessage extends SerializedBuffer {
     _msgId: number; // 2 bytes

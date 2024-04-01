@@ -31,6 +31,7 @@ export {
     serializeStringRaw,
     NPSHeader,
     OldServerMessage,
+    serverHeader,
 } from "./src/messageFactory.js";
 export { RawMessage } from "./src/RawMessage.js";
 export { ServerMessage } from "./src/ServerMessage.js";

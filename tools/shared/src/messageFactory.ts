@@ -345,6 +345,7 @@ export class NPSHeader extends SerializableMixin(AbstractSerializable) {
  * - 4 bytes - mcoSig
  * - 4 bytes - sequence
  * - 1 byte - flags
+ * TODO: Capitalize class name
  */
 export class serverHeader extends SerializableMixin(AbstractSerializable) {
     _size: number;
@@ -854,6 +855,7 @@ export class MessageBuffer extends SerializedBuffer {
 }
 
 /**
+ * @deprecated
  * A server message is a message that is passed between the server and the client. It has an 11 byte header. @see {@link serverHeader}
  *
  * @mixin {SerializableMixin}

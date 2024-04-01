@@ -1,16 +1,40 @@
 import { describe, it, expect, vi } from "vitest";
 import { _getCompleteVehicleInfo } from "./_getCompleteVehicleInfo.js";
-import {
-    mockLogger,
-    mockServerMessageType,
-} from "../../../../test/factoryMocks.js";
+import { ServerMessageType } from "rm-shared";
+import { serverHeader } from "rm-shared";
 
 describe("_getCompleteVehicleInfo", () => {
     it("should throw when passed message is too small", async () => {
         // Setup
         const connectionId = "testConnectionId";
-        const packet = mockServerMessageType();
-        const log = mockLogger();
+        const packet: ServerMessageType = {
+            _header: new serverHeader,
+            _msgNo: 0,
+            size: function (): number {
+                throw new Error("Function not implemented.");
+            },
+            _doDeserialize: function (buffer: Buffer): ServerMessageType {
+                throw new Error("Function not implemented.");
+            },
+            serialize: function (): Buffer {
+                throw new Error("Function not implemented.");
+            },
+            setBuffer: function (buffer: Buffer): void {
+                throw new Error("Function not implemented.");
+            },
+            updateMsgNo: function (): void {
+                throw new Error("Function not implemented.");
+            },
+            data: Buffer.from([]),
+        };
+        const log = {
+            info: vi.fn(),
+            error: vi.fn(),
+            fatal: vi.fn(),
+            warn: vi.fn(),
+            debug: vi.fn(),
+            trace: vi.fn(),
+        };
 
         const expected = {
             vehicleId: 1,

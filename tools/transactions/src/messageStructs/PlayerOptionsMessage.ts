@@ -1,4 +1,4 @@
-import { OldServerMessage } from "../../../shared";
+import { OldServerMessage } from "rm-shared";
 
 export class CarNumberSet {
     private cars: string[] = [];

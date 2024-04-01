@@ -1,5 +1,5 @@
 import { GenericReplyMessage } from "./GenericReplyMessage.js";
-import { OldServerMessage } from "../../shared";
+import { OldServerMessage } from "rm-shared";
 import type { MessageHandlerArgs, MessageHandlerResult } from "../types.js";
 
 /**

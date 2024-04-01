@@ -1,4 +1,4 @@
-import { SerializedBuffer } from "../../shared";
+import { SerializedBuffer } from "rm-shared";
 
 export class PlayerPhysicalMessage extends SerializedBuffer {
     _msgNo: number; // 2 bytes
