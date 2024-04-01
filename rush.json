@@ -338,7 +338,7 @@
     {
       "packageName": "rm-database",
       "projectFolder": "tools/database"
-    }
+    },
     // {
     //   "packageName": "rm-transactions",
     //   "projectFolder": "tools/transactions"
