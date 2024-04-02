@@ -1,7 +1,7 @@
 /// <reference types="node" />
 /// <reference types="node" />
 import { IncomingMessage, ServerResponse } from "node:http";
-import { ServerLogger } from "../../shared";
+import { TServerLogger } from "../../shared";
 import { Buffer } from "node:buffer";
 export declare const CastanetResponse: {
     body: Buffer;
@@ -31,14 +31,14 @@ export declare class PatchServer {
      * @private
      * @type {ServerLogger}
      */
-    _log: ServerLogger;
+    _log: TServerLogger;
     /**
      * Creates an instance of PatchServer.
      * Please use getInstance() instead
      * @param {ServerLogger} log
      * @memberof PatchServer
      */
-    constructor(log: ServerLogger);
+    constructor(log: TServerLogger);
     /**
      * Return the instance of the PatchServer class
      *
@@ -47,7 +47,7 @@ export declare class PatchServer {
      * @return {PatchServer}
      * @memberof PatchServer
      */
-    static getInstance(log: ServerLogger): PatchServer;
+    static getInstance(log: TServerLogger): PatchServer;
     /**
      * Returns the hard-coded value that tells the client there are no updates or patches
      * @param {IncomingMessage} request
@@ -73,4 +73,4 @@ export declare class PatchServer {
  * Return the instance of the PatchServer class
  * @returns {PatchServer}
  */
-export declare function getPatchServer(log: ServerLogger): PatchServer;
+export declare function getPatchServer(log: TServerLogger): PatchServer;

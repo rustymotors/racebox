@@ -15,7 +15,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import { readFile } from "node:fs/promises";
-import { Configuration } from "rm-shared";
+import { TConfiguration } from "rm-shared";
 
 // This section of the server can not be encrypted. This is an intentional choice for compatibility
 // deepcode ignore HttpToHttps: This is intentional. See above note.
@@ -25,7 +25,7 @@ import { Configuration } from "rm-shared";
  * @param {TConfiguration} config
  * @return {string}
  */
-export async function handleGetCert(config: Configuration): Promise<string> {
+export async function handleGetCert(config: TConfiguration): Promise<string> {
     if (config.certificateFile === undefined) {
         throw new Error("Certificate file not defined");
     }
@@ -41,7 +41,7 @@ export async function handleGetCert(config: Configuration): Promise<string> {
  * @param {TConfiguration} config
  * @return {string}
  */
-export function handleGetRegistry(config: Configuration): string {
+export function handleGetRegistry(config: TConfiguration): string {
     const externalHost = config.host;
     const patchHost = externalHost;
     const authHost = externalHost;
@@ -80,7 +80,7 @@ export function handleGetRegistry(config: Configuration): string {
  * @param {TConfiguration} config
  * @return {string}
  */
-export async function handleGetKey(config: Configuration): Promise<string> {
+export async function handleGetKey(config: TConfiguration): Promise<string> {
     if (config.publicKeyFile === undefined) {
         throw new Error("Public key file not defined");
     }

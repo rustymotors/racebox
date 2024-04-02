@@ -163,7 +163,7 @@ async function login({
  * handler: (args: {
  * connectionId: string,
  * message: SerializedBuffer,
- * log: ServerLogger,
+ * log: TServerLogger,
  * }) => Promise<{
  * connectionId: string,
  * messages: SerializedBuffer[],

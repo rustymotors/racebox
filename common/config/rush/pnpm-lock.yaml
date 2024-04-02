@@ -42,6 +42,29 @@ importers:
       typescript: 5.4.3
       vitest: 1.4.0_@types+node@20.12.2
 
+  ../../tools/lobby:
+    specifiers:
+      '@sentry/node': ~7.109.0
+      '@tsconfig/node20': ~20.1.4
+      '@types/node': ~20.12.2
+      rimraf: ~5.0.5
+      rm-database: workspace:*
+      rm-persona: workspace:*
+      rm-shared: workspace:*
+      typescript: ~5.4.3
+      vitest: ~1.4.0
+    dependencies:
+      rm-database: link:../database
+      rm-persona: link:../persona
+      rm-shared: link:../shared
+    devDependencies:
+      '@sentry/node': 7.109.0
+      '@tsconfig/node20': 20.1.4
+      '@types/node': 20.12.2
+      rimraf: 5.0.5
+      typescript: 5.4.3
+      vitest: 1.4.0_@types+node@20.12.2
+
   ../../tools/login:
     specifiers:
       '@sentry/node': ~7.109.0

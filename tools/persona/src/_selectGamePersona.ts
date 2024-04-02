@@ -1,4 +1,4 @@
-import { ServerLogger, getServerLogger } from "rm-shared";
+import { TServerLogger, getServerLogger } from "rm-shared";
 import { LegacyMessage, SerializedBuffer } from "rm-shared";
 
 /**
@@ -20,7 +20,7 @@ export async function _selectGamePersona({
 }: {
     connectionId: string;
     message: LegacyMessage;
-    log: ServerLogger;
+    log: TServerLogger;
 }): Promise<{
     connectionId: string;
     messages: SerializedBuffer[];

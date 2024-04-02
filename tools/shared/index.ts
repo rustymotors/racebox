@@ -1,7 +1,7 @@
 export { SubThread } from "./src/SubThread.js";
 export { NetworkMessage } from "./src/NetworkMessage.js";
-export { ServerLogger, getServerLogger } from "./src/log.js";
-export { Configuration, getServerConfiguration, TConfiguration } from "./src/Configuration.js";
+export { getServerLogger } from "./src/log.js";
+export { getServerConfiguration, TConfiguration } from "./src/Configuration.js";
 export {
     McosEncryptionPair,
     createInitialState,

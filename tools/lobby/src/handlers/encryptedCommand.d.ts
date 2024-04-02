@@ -1,6 +1,6 @@
-import { TServerLogger, SerializedBuffer } from "../../shared";
+import { TServerLogger, LegacyMessage, SerializedBuffer } from "rm-shared";
 /**
- * Array of supported message handlers
+ * Array of supported command handlers
  *
  * @type {{
  *  opCode: number,
@@ -26,28 +26,46 @@ export declare const messageHandlers: {
         messages: SerializedBuffer[];
     }>;
 }[];
+export type NpsCommandHandler = {
+    opCode: number;
+    name: string;
+    handler: (args: {
+        connectionId: string;
+        message: LegacyMessage;
+        log: TServerLogger;
+    }) => Promise<{
+        connectionId: string;
+        message: LegacyMessage;
+    }>;
+};
 /**
- * Entry and exit point of the Login service
  *
- * @export
+ *
  * @param {object} args
  * @param {string} args.connectionId
  * @param {SerializedBuffer} args.message
  * @param {ServerLogger} args.log
- * @returns {Promise<{
- *  connectionId: string,
- * messages: SerializedBuffer[],
- * }>}
+  * @returns {Promise<{
+*  connectionId: string,
+* messages: SerializedBuffer[],
+* }>}
+
  */
-export declare function handleLoginData({
+export declare function handleEncryptedNPSCommand({
     connectionId,
     message,
     log,
 }: {
     connectionId: string;
     message: SerializedBuffer;
-    log: TServerLogger;
+    log:TServerLogger;
 }): Promise<{
     connectionId: string;
     messages: SerializedBuffer[];
 }>;
+export declare const channelRecordSize = 40;
+export declare const channels: {
+    id: number;
+    name: string;
+    population: number;
+}[];

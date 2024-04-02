@@ -3,7 +3,7 @@ import { getServerConfiguration } from "./Configuration.js";
 
 const DEFAULT_LOG_LEVEL = "trace";
 
-export type ServerLoggerLevels =
+export type TServerLoggerLevels =
     | "fatal"
     | "error"
     | "warn"
@@ -12,8 +12,8 @@ export type ServerLoggerLevels =
     | "trace"
     | "silent";
 
-type ServerLoggerOptions = {
-    level: ServerLoggerLevels;
+type TServerLoggerOptions = {
+    level: TServerLoggerLevels;
     name?: string;
 };
 
@@ -21,14 +21,14 @@ type ServerLoggerOptions = {
  * @static
  * @property {ServerLogger} instance
  */
-export class ServerLogger {
+export class TServerLogger {
     logger: P.Logger;
-    static instance: ServerLogger;
+    static instance: TServerLogger;
     /**
-     * Creates an instance of ServerLogger.
+     * Creates an instance of TServerLogger.
      * @param {ServerLoggerOptions} options
      */
-    constructor(options?: ServerLoggerOptions) {
+    constructor(options?: TServerLoggerOptions) {
         const name = options?.name || "server";
         const level = DEFAULT_LOG_LEVEL;
         this.logger = P.pino({
@@ -55,7 +55,7 @@ export class ServerLogger {
                 ],
             },
         });
-        ServerLogger.instance = this;
+        TServerLogger.instance = this;
     }
 
     /**
@@ -107,12 +107,12 @@ export class ServerLogger {
  * @param {ServerLoggerOptions} options
  * @return {ServerLogger}
  */
-export function getServerLogger(options?: ServerLoggerOptions): ServerLogger {
-    if (typeof ServerLogger.instance === "undefined") {
-        ServerLogger.instance = new ServerLogger(options);
+export function getServerLogger(options?: TServerLoggerOptions): TServerLogger {
+    if (typeof TServerLogger.instance === "undefined") {
+        TServerLogger.instance = new TServerLogger(options);
     }
 
-    const child = ServerLogger.instance;
+    const child = TServerLogger.instance;
     return child;
 }
 

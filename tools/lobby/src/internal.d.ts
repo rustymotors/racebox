@@ -27,9 +27,6 @@ export declare const messageHandlers: {
     }>;
 }[];
 /**
- * Entry and exit point of the Login service
- *
- * @export
  * @param {object} args
  * @param {string} args.connectionId
  * @param {SerializedBuffer} args.message
@@ -38,8 +35,9 @@ export declare const messageHandlers: {
  *  connectionId: string,
  * messages: SerializedBuffer[],
  * }>}
+ * @throws {Error} Unknown code was received
  */
-export declare function handleLoginData({
+export declare function receiveLobbyData({
     connectionId,
     message,
     log,

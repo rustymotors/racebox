@@ -1,4 +1,4 @@
-import type { ServerLogger, ServiceResponse, NPSMessage } from "../../shared";
+import type { TServerLogger, ServiceResponse, NPSMessage } from "../../shared";
 /**
  * Please use {@link LoginServer.getInstance()}
  */
@@ -11,7 +11,7 @@ export declare class LoginServer {
      * @param {ServerLogger} options.log
      * @memberof LoginServer
      */
-    constructor({ log }: { log: ServerLogger });
+    constructor({ log }: { log: TServerLogger });
     /**
      * Get the single instance of the login server
      *
@@ -19,7 +19,7 @@ export declare class LoginServer {
      * @param {ServerLogger} log
      * @return {LoginServer}
      */
-    static getInstance(log: ServerLogger): LoginServer;
+    static getInstance(log: TServerLogger): LoginServer;
     /**
      *
      * @param {string} contextId
@@ -47,5 +47,5 @@ export declare function receiveLoginData({
 }: {
     connectionId: string;
     message: NPSMessage;
-    log: ServerLogger;
+    log: TServerLogger;
 }): Promise<ServiceResponse>;

@@ -16,7 +16,7 @@
 
 import { messageHandlers } from "./messageHandlers.js";
 import {
-    ServerLogger,
+    TServerLogger,
     fetchStateFromDatabase,
     getEncryption,
     updateEncryption,
@@ -114,7 +114,7 @@ export async function receiveTransactionsData({
 }: {
     connectionId: string;
     message: SerializedBuffer;
-    log: ServerLogger;
+    log: TServerLogger;
 }): Promise<{
     connectionId: string;
     messages: SerializedBuffer[];

@@ -1,11 +1,7 @@
 import { privateDecrypt } from "node:crypto";
 import { readFileSync } from "node:fs";
 
-import { LegacyMessage, Configuration, TServerLogger, TConfiguration } from "rm-shared";
-
-/**
- * @typedef {Configuration} Configuration
- */
+import { LegacyMessage, TServerLogger, TConfiguration } from "rm-shared";
 
 /**
  *

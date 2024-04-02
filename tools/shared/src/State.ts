@@ -9,7 +9,7 @@
 import { Cipher, Decipher } from "crypto";
 import { SerializedBuffer } from "./messageFactory.js";
 import { Socket } from "node:net";
-import { ServerLogger } from "./log.js";
+import { TServerLogger } from "./log.js";
 
 /**
  * @external RawMessage
@@ -182,7 +182,7 @@ interface OnDataHandlerArgs {
     args: {
         connectionId: string;
         message: SerializedBuffer;
-        log: ServerLogger;
+        log: TServerLogger;
     };
 }
 /**

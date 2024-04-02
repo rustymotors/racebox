@@ -350,6 +350,10 @@
     {
       "packageName": "rm-login",
       "projectFolder": "tools/login"
+    },
+    {
+      "packageName": "rm-lobby",
+      "projectFolder": "tools/lobby"
     }
     // {
     //   /**

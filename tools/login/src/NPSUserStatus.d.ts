@@ -1,8 +1,6 @@
 /// <reference types="node" />
-import { LegacyMessage, Configuration, ServerLogger } from "../../shared";
-/**
- * @typedef {Configuration} Configuration
- */
+import { LegacyMessage, TConfiguration, TServerLogger } from "rm-shared";
+
 /**
  *
  *
@@ -24,8 +22,8 @@ import { LegacyMessage, Configuration, ServerLogger } from "../../shared";
  * @property {Buffer} buffer
  */
 export declare class NPSUserStatus extends LegacyMessage {
-    _config: Configuration;
-    log: ServerLogger;
+    _config: TConfiguration;
+    log: TServerLogger;
     sessionKey: string;
     opCode: number;
     contextId: string;
@@ -36,7 +34,7 @@ export declare class NPSUserStatus extends LegacyMessage {
      * @param {Configuration} config
      * @param {ServerLogger} log
      */
-    constructor(packet: Buffer, config: Configuration, log: ServerLogger);
+    constructor(packet: Buffer, config: TConfiguration, log: TServerLogger);
     /**
      * ExtractSessionKeyFromPacket
      *

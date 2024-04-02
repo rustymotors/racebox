@@ -1,5 +1,5 @@
 import {
-    ServerLogger,
+    TServerLogger,
     LegacyMessage,
     SerializedBuffer,
     RawMessage,
@@ -16,7 +16,7 @@ export async function validatePersonaName({
 }: {
     connectionId: string;
     message: LegacyMessage;
-    log: ServerLogger;
+    log: TServerLogger;
 }): Promise<{
     connectionId: string;
     messages: SerializedBuffer[];
