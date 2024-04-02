@@ -6,10 +6,10 @@ import type { ISerializable, IMessage } from "./interfaces.js";
  */
 export class ServerMessageHeader extends Serializable implements ISerializable {
     // All fields are little-endian
-    private length: number = 0; // 2 bytes
-    private signature: string = ""; // 4 bytes
-    private sequence: number = 0; // 4 bytes
-    private flags: number = 0; // 1
+    private length = 0; // 2 bytes
+    private signature = ""; // 4 bytes
+    private sequence = 0; // 4 bytes
+    private flags = 0; // 1
 
     getDataOffset(): number {
         return 11;
@@ -62,7 +62,7 @@ export class ServerMessagePayload
     extends Serializable
     implements ISerializable
 {
-    private messageId: number = 0; // 2 bytes
+    private messageId = 0; // 2 bytes
 
     override getByteSize(): number {
         return 2 + this._data.length;

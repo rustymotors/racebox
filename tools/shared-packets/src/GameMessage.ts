@@ -6,8 +6,8 @@ import type { ISerializable, IMessage } from "./interfaces.js";
  */
 export class GameMessageHeader extends Serializable implements ISerializable {
     // Version 0: 4 bytes
-    private id: number = 0; // 2 bytes
-    private length: number = 0; // 2 bytes
+    private id = 0; // 2 bytes
+    private length = 0; // 2 bytes
 
     // Version 1: v0 + 8 bytes
     private version: 0 | 257 = 0; // 2 bytes

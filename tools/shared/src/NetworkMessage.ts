@@ -11,9 +11,9 @@ import { SerializedBuffer } from "./SerializedBuffer.js";
  */
 export class NetworkMessage extends SerializedBuffer {
     private _messageId: number;
-    version: number = 0x101;
-    reserved: number = 0x0000;
-    private _checksum: number = 0x00000000;
+    version = 0x101;
+    reserved = 0x0000;
+    private _checksum = 0x00000000;
     constructor(messageId: number, data?: Buffer) {
         super(data);
         this._messageId = messageId;

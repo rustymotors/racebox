@@ -14,11 +14,11 @@ const log = getServerLogger();
 const DAMAGE_SIZE = 2000;
 
 export class VehicleStruct {
-    VehicleID: number = 0; // 4 bytes
-    SkinID: number = 0; // 4 bytes
-    Flags: number = 0; // 4 bytes
-    Delta: number = 0; // 4 bytes
-    CarClass: number = 0; // 1 byte
+    VehicleID = 0; // 4 bytes
+    SkinID = 0; // 4 bytes
+    Flags = 0; // 4 bytes
+    Delta = 0; // 4 bytes
+    CarClass = 0; // 1 byte
     Damage: Buffer = Buffer.alloc(DAMAGE_SIZE); // buffer, max DAMAGE_SIZE
 
     serialize() {
@@ -56,14 +56,14 @@ export class VehicleStruct {
 }
 
 export class PartStruct {
-    partId: number = 0; // 4 bytes
+    partId = 0; // 4 bytes
     parentPartId: number | null = 0; // 4 bytes
-    brandedPartId: number = 0; // 4 bytes
-    repairCost: number = 0; // 4 bytes
-    junkyardValue: number = 0; // 4 bytes
-    wear: number = 0; // 4 bytes
-    arttachmentPoint: number = 0; // 1 byte
-    damage: number = 0; // 1 byte
+    brandedPartId = 0; // 4 bytes
+    repairCost = 0; // 4 bytes
+    junkyardValue = 0; // 4 bytes
+    wear = 0; // 4 bytes
+    arttachmentPoint = 0; // 1 byte
+    damage = 0; // 1 byte
 
     serialize() {
         try {
@@ -101,10 +101,10 @@ export class PartStruct {
 }
 
 class CarInfoStruct {
-    msgNo: number = 0; // 2 bytes
-    playerId: number = 0; // 4 bytes
+    msgNo = 0; // 2 bytes
+    playerId = 0; // 4 bytes
     vehicle: VehicleStruct = new VehicleStruct();
-    noOfParts: number = 0; // 2 bytes
+    noOfParts = 0; // 2 bytes
     parts: PartStruct[] = [];
 
     serialize() {
