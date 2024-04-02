@@ -6,7 +6,14 @@ describe("handleSendMiniRiffList", () => {
     it("should return a buffer", async () => {
         // arrange
         const incomingMessage = new LegacyMessage();
-        const log = {} as TServerLogger;
+        const log: TServerLogger = {
+            debug: () => vi.fn(),
+            error: () => vi.fn(),
+            info: () => vi.fn(),
+            warn: () => vi.fn(),
+            fatal: () => vi.fn(),
+            trace: () => vi.fn(),
+        };
         const result = await handleSendMiniRiffList({
             connectionId: "test",
             message: incomingMessage,

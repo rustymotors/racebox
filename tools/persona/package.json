@@ -11,7 +11,7 @@
     },
     "scripts": {
         "build": "rimraf ./lib/ && tsc",
-        "test": "vitest"
+        "test": "vitest run"
     },
     "keywords": [],
     "author": "",
@@ -26,6 +26,7 @@
     "dependencies": {
       "pino": "~8.19.0",
       "rm-shared": "workspace:*",
-      "rm-core": "workspace:*"
+      "rm-core": "workspace:*",
+      "pino-pretty": "~11.0.0"
     }
 }

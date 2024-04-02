@@ -1,5 +1,5 @@
 {
-    "name": "rm-shared-packets",
+    "name": "rm-cli",
     "private": true,
     "version": "1.0.0",
     "description": "",
@@ -10,7 +10,7 @@
         }
     },
     "scripts": {
-        "build": "rimraf ./dist/ && tsc",
+        "build": "rimraf ./lib/ && tsc",
         "test": "vitest run"
     },
     "keywords": [],
@@ -21,6 +21,10 @@
         "@types/node": "~20.12.2",
         "rimraf": "~5.0.5",
         "typescript": "~5.4.3",
-        "vitest": "~1.4.0"
+        "vitest": "~1.4.0",
+        "@sentry/node": "~7.109.0"
+    },
+    "dependencies": {
+      "rm-shared": "workspace:*"
     }
 }

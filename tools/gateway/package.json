@@ -1,5 +1,5 @@
 {
-  "name": "rm-lobby",
+  "name": "rm-gateway",
   "private": true,
   "version": "1.0.0",
   "description": "",
@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "rimraf ./lib/ && tsc",
-    "test": "vitest run"
+    "test": "node --openssl-legacy-provider node_modules/vitest/vitest.mjs run"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +27,16 @@
   "dependencies": {
     "rm-database": "workspace:*",
     "rm-shared": "workspace:*",
-    "rm-persona": "workspace:*"
+    "rm-persona": "workspace:*",
+    "@fastify/sensible": "~5.5.0",
+    "fastify": "~4.26.2",
+    "rm-shard": "workspace:*",
+    "rm-patch": "workspace:*",
+    "rm-cli": "workspace:*",
+    "rm-login": "workspace:*",
+    "rm-lobby": "workspace:*",
+    "rm-transactions": "workspace:*",
+    "rm-nps": "workspace:*",
+    "rm-shared-packets": "workspace:*"
   }
 }

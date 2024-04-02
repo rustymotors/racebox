@@ -14,7 +14,7 @@ export async function getPersonasByPersonaId({
     personas?: PersonaRecord[];
     id: number;
 }): Promise<PersonaRecord[]> {
-    const results = personaRecords.filter((persona) => {
+    const results = personas.filter((persona) => {
         const match = id === persona.personaId;
         return match;
     });

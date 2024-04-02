@@ -1,4 +1,6 @@
+import { Server, Socket } from "node:net";
 import { serverHeader } from "./messageFactory.js";
+import { TConfiguration } from "./Configuration.js";
 
 export interface ServerMessageType {
     _header: serverHeader;
@@ -20,3 +22,17 @@ export type TServerLogger = {
     debug: (message: string) => void;
     trace: (message: string) => void;
 };
+
+export interface IGatewayServer {
+    start(): void;
+    stop(): void;
+    config: TConfiguration;
+    log: TServerLogger;
+    timer: ReturnType<typeof setTimeout> | null;
+    loopInterval: number;
+    status: string;
+    consoleEvents: string[];
+    backlogAllowedCount: number;
+    listeningPortList: number[];
+    servers: Server[];
+}

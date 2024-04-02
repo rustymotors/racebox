@@ -354,6 +354,14 @@
     {
       "packageName": "rm-lobby",
       "projectFolder": "tools/lobby"
+    },
+    {
+      "packageName": "rm-gateway",
+      "projectFolder": "tools/gateway"
+    },
+    {
+      "packageName": "rm-cli",
+      "projectFolder": "tools/cli"
     }
     // {
     //   /**

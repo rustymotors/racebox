@@ -36,6 +36,6 @@ export {
 export { RawMessage } from "./src/RawMessage.js";
 export { ServerMessage } from "./src/ServerMessage.js";
 export { MessageNode } from "./src/MessageNode.js";
-export type { TServerLogger, ServerMessageType } from "./src/types.js";
+export type { TServerLogger, ServerMessageType, IGatewayServer } from "./src/types.js";
 export { Timestamp } from "./src/Timestamp.js";
 export { createCommandEncryptionPair, createDataEncryptionPair } from "./src/encryption.js";
