@@ -1,4 +1,4 @@
-/// <reference types="node" />
+/// <reference types="node" resolution-mode="require"/>
 import { Cipher, Decipher } from "node:crypto";
 export type ClientVersion = "debug" | "release" | "unknown";
 export type EncryptionSession = {
@@ -9,20 +9,10 @@ export type EncryptionSession = {
     gameDecipher: Decipher;
 };
 export declare const encryptionSessions: Map<string, EncryptionSession>;
-export declare function setEncryptionSession(
-    encryptionSession: EncryptionSession,
-): Promise<void>;
-export declare function getEncryptionSession(
-    connectionId: string,
-): Promise<EncryptionSession | undefined>;
-export declare function deleteEncryptionSession(
-    connectionId: string,
-): Promise<void>;
-export declare function newEncryptionSession({
-    connectionId,
-    customerId,
-    sessionKey,
-}: {
+export declare function setEncryptionSession(encryptionSession: EncryptionSession): Promise<void>;
+export declare function getEncryptionSession(connectionId: string): Promise<EncryptionSession | undefined>;
+export declare function deleteEncryptionSession(connectionId: string): Promise<void>;
+export declare function newEncryptionSession({ connectionId, customerId, sessionKey, }: {
     connectionId: string;
     customerId: number;
     sessionKey: string;
@@ -40,31 +30,10 @@ export type UserSession = {
 };
 export declare const userSessions: Map<string, UserSession>;
 export declare function setUserSession(userSession: UserSession): Promise<void>;
-export declare function getUserSession(
-    token: string,
-): Promise<UserSession | undefined>;
+export declare function getUserSession(token: string): Promise<UserSession | undefined>;
 export declare function deleteUserSession(token: string): Promise<void>;
-export declare function getUserSessionByConnectionId(
-    connectionId: string,
-): Promise<UserSession | undefined>;
-export declare function getUserSessionByProfileId(
-    profileId: number,
-): Promise<UserSession | undefined>;
-export declare function getUserSessionByCustomerId(
-    customerId: number,
-): Promise<UserSession | undefined>;
-export declare function getUserSessionByIPAndPort(
-    ipAddress: string,
-    port: number,
-): Promise<UserSession | undefined>;
-export declare function createNewUserSession({
-    customerId,
-    token,
-    connectionId,
-    port,
-    ipAddress,
-    activeProfileId,
-    nextSequenceNumber,
-    sessionKey,
-    clientVersion,
-}: UserSession): Promise<UserSession>;
+export declare function getUserSessionByConnectionId(connectionId: string): Promise<UserSession | undefined>;
+export declare function getUserSessionByProfileId(profileId: number): Promise<UserSession | undefined>;
+export declare function getUserSessionByCustomerId(customerId: number): Promise<UserSession | undefined>;
+export declare function getUserSessionByIPAndPort(ipAddress: string, port: number): Promise<UserSession | undefined>;
+export declare function createNewUserSession({ customerId, token, connectionId, port, ipAddress, activeProfileId, nextSequenceNumber, sessionKey, clientVersion, }: UserSession): Promise<UserSession>;

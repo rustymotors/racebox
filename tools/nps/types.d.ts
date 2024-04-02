@@ -1,4 +1,4 @@
-/// <reference types="node" />
+/// <reference types="node" resolution-mode="require"/>
 export interface ISerializable {
     serialize(): Buffer;
     deserialize(data: Buffer): void;

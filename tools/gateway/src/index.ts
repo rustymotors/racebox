@@ -33,7 +33,7 @@ import {
     getGameMessageProcessor,
     getPortMessageType,
     GameMessage as OldGameMessage,
-} from "../../nps/index.js";
+} from "rm-nps";
 import type { SocketCallback } from "rm-nps";
 import { getAsHex } from "rm-nps";
 import type { ServiceResponse } from "rm-shared";

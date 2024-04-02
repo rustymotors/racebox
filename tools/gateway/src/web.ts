@@ -15,15 +15,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import { CastanetResponse } from "rm-patch";
-import { generateShardList } from "rm-shard";
 import { getServerConfiguration } from "rm-shared";
 import {
     handleGetCert,
     handleGetKey,
     handleGetRegistry,
-} from "../../shard/src/index.js";
-import { checkPassword, getUser } from "../../nps/services/account.js";
-import { generateToken } from "../../nps/services/token.js";
+    generateShardList,
+} from "rm-shard";
+import { checkPassword, getUser, generateToken } from "rm-nps";
 
 /**
  * Add web routes to the web server

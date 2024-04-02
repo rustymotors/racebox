@@ -1,4 +1,4 @@
-/// <reference types="node" />
+/// <reference types="node" resolution-mode="require"/>
 import type { ISerializable } from "../types.js";
 import { SessionKey } from "./SessionKey.js";
 import { UserAction } from "./UserAction.js";
@@ -9,14 +9,7 @@ export declare class UserStatus implements ISerializable {
     private ban;
     private gag;
     private sessionKey;
-    constructor(
-        customerId: number,
-        personaId: number,
-        isCacheHit: boolean,
-        ban: UserAction,
-        gag: UserAction,
-        sessionKey: SessionKey,
-    );
+    constructor(customerId: number, personaId: number, isCacheHit: boolean, ban: UserAction, gag: UserAction, sessionKey: SessionKey);
     serialize(): Buffer;
     deserialize(data: Buffer): void;
     getByteSize(): number;

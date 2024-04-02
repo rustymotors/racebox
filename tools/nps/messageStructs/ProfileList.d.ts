@@ -1,4 +1,4 @@
-/// <reference types="node" />
+/// <reference types="node" resolution-mode="require"/>
 import type { ISerializable } from "../types.js";
 import { GameProfile } from "./GameProfile.js";
 import { NPSList } from "./NPSList.js";

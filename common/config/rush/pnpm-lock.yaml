@@ -5,6 +5,33 @@ importers:
   .:
     specifiers: {}
 
+  ../../apps/main:
+    specifiers:
+      '@sentry/node': ~7.109.0
+      '@sentry/profiling-node': ~7.109.0
+      '@tsconfig/node20': ~20.1.4
+      '@types/node': ~20.12.2
+      '@vitest/coverage-v8': ~1.4.0
+      pino-pretty: ~11.0.0
+      rimraf: ~5.0.5
+      rm-gateway: workspace:*
+      rm-shared: workspace:*
+      typescript: ~5.4.3
+      vitest: ~1.4.0
+    dependencies:
+      '@sentry/profiling-node': 7.109.0
+      pino-pretty: 11.0.0
+      rm-gateway: link:../../tools/gateway
+      rm-shared: link:../../tools/shared
+    devDependencies:
+      '@sentry/node': 7.109.0
+      '@tsconfig/node20': 20.1.4
+      '@types/node': 20.12.2
+      '@vitest/coverage-v8': 1.4.0_vitest@1.4.0
+      rimraf: 5.0.5
+      typescript: 5.4.3
+      vitest: 1.4.0_@types+node@20.12.2
+
   ../../tools/cli:
     specifiers:
       '@sentry/node': ~7.109.0
@@ -254,11 +281,13 @@ importers:
       '@types/node': ~20.12.2
       '@vitest/coverage-v8': ~1.4.0
       pino: ~8.19.0
+      pino-pretty: ~11.0.0
       rimraf: ~5.0.5
       typescript: ~5.4.3
       vitest: ~1.4.0
     dependencies:
       pino: 8.19.0
+      pino-pretty: 11.0.0
     devDependencies:
       '@tsconfig/node20': 20.1.4
       '@types/node': 20.12.2
@@ -800,6 +829,16 @@ packages:
       '@sentry/types': 7.109.0
       '@sentry/utils': 7.109.0
 
+  /@sentry/profiling-node/7.109.0:
+    resolution: {integrity: sha512-wdDxJ86/A71QTpbbn4LaiB6vmvGd3QEq7UOdZS/y/3SwV66zpkvNB8yPER41BgqDjqcmIY/va9fNi319iTREFw==}
+    engines: {node: '>=8.0.0'}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      detect-libc: 2.0.3
+      node-abi: 3.57.0
+    dev: false
+
   /@sentry/types/7.109.0:
     resolution: {integrity: sha512-egCBnDv3YpVFoNzRLdP0soVrxVLCQ+rovREKJ1sw3rA2/MFH9WJ+DZZexsX89yeAFzy1IFsCp7/dEqudusml6g==}
     engines: {node: '>=8'}
@@ -1111,6 +1150,11 @@ packages:
   /depd/2.0.0:
     resolution: {integrity: sha512-g7nH6P6dyDioJogAAGprGpCtVImJhpPk/roCzdb3fIh61/s/nPsfR6onyMwkCAR/OlC3yBC0lESvUoQEAssIrw==}
     engines: {node: '>= 0.8'}
+    dev: false
+
+  /detect-libc/2.0.3:
+    resolution: {integrity: sha512-bwy0MGW55bG41VqxxypOsdSdGqLwXPI/focwgTYCFMbdUiBAxLg9CFzG08sz2aqzknwiX7Hkl0bQENjg8iLByw==}
+    engines: {node: '>=8'}
     dev: false
 
   /diff-sequences/29.6.3:
@@ -1609,6 +1653,13 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
     dev: true
+
+  /node-abi/3.57.0:
+    resolution: {integrity: sha512-Dp+A9JWxRaKuHP35H77I4kCKesDy5HUDEmScia2FyncMTOXASMyg251F5PhFoDA5uqBrDDffiLpbqnrZmNXW+g==}
+    engines: {node: '>=10'}
+    dependencies:
+      semver: 7.6.0
+    dev: false
 
   /npm-run-path/5.3.0:
     resolution: {integrity: sha512-ppwTtiJZq0O/ai0z7yfudtBpWIoxM8yE6nHi1X47eFR2EWORqfbu6CnPlNsjeN683eT0qG6H/Pyf9fCcvjnnnQ==}

@@ -70,6 +70,10 @@
     {
       "packageName": "rm-cli",
       "projectFolder": "tools/cli"
+    },
+    {
+      "packageName": "rustymotors",
+      "projectFolder": "apps/main"
     }
   ]
 }

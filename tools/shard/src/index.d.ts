@@ -4,7 +4,7 @@ import { TConfiguration } from "rm-shared";
  * @param {TConfiguration} config
  * @return {string}
  */
-export declare function handleGetCert(config: TConfiguration): string;
+export declare function handleGetCert(config: TConfiguration): Promise<string>;
 /**
  * Generate Windows registry configuration file for clients
  * @param {TConfiguration} config
@@ -16,4 +16,4 @@ export declare function handleGetRegistry(config: TConfiguration): string;
  * @param {TConfiguration} config
  * @return {string}
  */
-export declare function handleGetKey(config: TConfiguration): string;
+export declare function handleGetKey(config: TConfiguration): Promise<string>;

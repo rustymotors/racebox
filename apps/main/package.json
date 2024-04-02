@@ -1,0 +1,30 @@
+{
+    "name": "rustymotors",
+    "private": true,
+    "version": "1.0.0",
+    "description": "",
+    "type": "module",
+    "main": "./server.js",
+    "scripts": {
+        "build": "rimraf ./lib/ && tsc",
+        "start": "node --openssl-legacy-provider --env-file=../../.env dist/server.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "",
+    "devDependencies": {
+        "@tsconfig/node20": "~20.1.4",
+        "@types/node": "~20.12.2",
+        "rimraf": "~5.0.5",
+        "typescript": "~5.4.3",
+        "vitest": "~1.4.0",
+        "@sentry/node": "~7.109.0",
+        "@vitest/coverage-v8": "~1.4.0"
+    },
+    "dependencies": {
+      "rm-shared": "workspace:*",
+      "rm-gateway": "workspace:*",
+      "@sentry/profiling-node": "~7.109.0",
+      "pino-pretty": "~11.0.0"
+    }
+}

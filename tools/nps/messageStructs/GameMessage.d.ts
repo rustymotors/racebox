@@ -1,4 +1,4 @@
-/// <reference types="node" />
+/// <reference types="node" resolution-mode="require"/>
 import type { ISerializable, IMessageHeader, IMessage } from "../types.js";
 export declare class MessageHeader implements IMessageHeader {
     private version;
