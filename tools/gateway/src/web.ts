@@ -17,10 +17,10 @@
 import { CastanetResponse } from "rm-patch";
 import { getServerConfiguration } from "rm-shared";
 import {
-    handleGetCert,
-    handleGetKey,
-    handleGetRegistry,
-    generateShardList,
+  handleGetCert,
+  handleGetKey,
+  handleGetRegistry,
+  generateShardList,
 } from "rm-shard";
 import { checkPassword, getUser, generateToken } from "rm-nps";
 
@@ -30,117 +30,117 @@ import { checkPassword, getUser, generateToken } from "rm-nps";
  * @param {import("fastify").FastifyInstance} webServer The web server
  */
 export function addWebRoutes(webServer: import("fastify").FastifyInstance) {
-    webServer.addContentTypeParser("*", function (request, payload, done) {
-        let data = "";
-        payload.on("data", (chunk) => {
-            data += chunk;
-        });
-        payload.on("end", () => {
-            done(null, data);
-        });
+  webServer.addContentTypeParser("*", function (request, payload, done) {
+    let data = "";
+    payload.on("data", (chunk) => {
+      data += chunk;
     });
-
-    webServer.get("/", (_request, reply) => {
-        return reply.send("Hello, world!");
+    payload.on("end", () => {
+      done(null, data);
     });
+  });
 
-    webServer.post(
-        "/games/EA_Seattle/MotorCity/UpdateInfo",
-        (_request, reply) => {
-            const response = CastanetResponse;
-            reply.header(response.header.type, response.header.value);
-            return reply.send(response.body);
-        },
-    );
+  webServer.get("/", (_request, reply) => {
+    return reply.send("Hello, world!");
+  });
 
-    webServer.post("/games/EA_Seattle/MotorCity/NPS", (_request, reply) => {
-        const response = CastanetResponse;
-        reply.header(response.header.type, response.header.value);
-        return reply.send(response.body);
-    });
+  webServer.post(
+    "/games/EA_Seattle/MotorCity/UpdateInfo",
+    (_request, reply) => {
+      const response = CastanetResponse;
+      reply.header(response.header.type, response.header.value);
+      return reply.send(response.body);
+    },
+  );
 
-    webServer.post("/games/EA_Seattle/MotorCity/MCO", (_request, reply) => {
-        const response = CastanetResponse;
-        reply.header(response.header.type, response.header.value);
-        return reply.send(response.body);
-    });
+  webServer.post("/games/EA_Seattle/MotorCity/NPS", (_request, reply) => {
+    const response = CastanetResponse;
+    reply.header(response.header.type, response.header.value);
+    return reply.send(response.body);
+  });
 
-    interface IQuerystring {
-        username: string;
-        password: string;
+  webServer.post("/games/EA_Seattle/MotorCity/MCO", (_request, reply) => {
+    const response = CastanetResponse;
+    reply.header(response.header.type, response.header.value);
+    return reply.send(response.body);
+  });
+
+  interface IQuerystring {
+    username: string;
+    password: string;
+  }
+
+  interface IHeaders {}
+
+  interface IReply {}
+
+  webServer.get<{
+    Querystring: IQuerystring;
+    Headers: IHeaders;
+    Reply: IReply;
+  }>("/AuthLogin", async (request, reply) => {
+    const username = request.query.username;
+    const password = request.query.password;
+
+    // Check for the username
+    const user = await getUser(username);
+
+    // If the user doesn't exist, return an error
+    if (typeof user === "undefined") {
+      return reply.send(
+        "reasoncode=INV-200\nreasontext=Opps~\nreasonurl=https://www.winehq.com",
+      );
     }
 
-    interface IHeaders {}
+    // Check the password
+    if ((await checkPassword(user, password)) === false) {
+      return reply.send("Valid=FALSE\nReason=Invalid password");
+    }
 
-    interface IReply {}
+    // Generate a token
+    const token = generateToken(user.customerId);
 
-    webServer.get<{
-        Querystring: IQuerystring;
-        Headers: IHeaders;
-        Reply: IReply;
-    }>("/AuthLogin", async (request, reply) => {
-        const username = request.query.username;
-        const password = request.query.password;
+    return reply.send(`Valid=TRUE\nTicket=${token}`);
+  });
 
-        // Check for the username
-        const user = await getUser(username);
+  webServer.get("/ShardList/", (_request, reply) => {
+    const config = getServerConfiguration({});
+    if (typeof config.host === "undefined") {
+      throw new Error("No host defined in config");
+    }
+    return reply.send(generateShardList(config.host));
+  });
 
-        // If the user doesn't exist, return an error
-        if (typeof user === "undefined") {
-            return reply.send(
-                "reasoncode=INV-200\nreasontext=Opps~\nreasonurl=https://www.winehq.com",
-            );
-        }
+  webServer.get("/cert", async (_request, reply) => {
+    const config = getServerConfiguration({});
+    if (typeof config.host === "undefined") {
+      throw new Error("No host defined in config");
+    }
+    const certFile = await handleGetCert(config);
+    reply.header("Content-Type", "text/plain");
+    reply.header("Content-Disposition", "attachment; filename=cert.crt");
+    reply.send(certFile);
+  });
 
-        // Check the password
-        if ((await checkPassword(user, password)) === false) {
-            return reply.send("Valid=FALSE\nReason=Invalid password");
-        }
+  webServer.get("/key", async (_request, reply) => {
+    const config = getServerConfiguration({});
+    if (typeof config.host === "undefined") {
+      throw new Error("No host defined in config");
+    }
+    const keyFile = await handleGetKey(config);
+    reply.header("Content-Type", "text/plain");
+    reply.header("Content-Disposition", "attachment; filename=pub.key");
+    reply.send(keyFile);
+  });
 
-        // Generate a token
-        const token = generateToken(user.customerId);
-
-        return reply.send(`Valid=TRUE\nTicket=${token}`);
-    });
-
-    webServer.get("/ShardList/", (_request, reply) => {
-        const config = getServerConfiguration({});
-        if (typeof config.host === "undefined") {
-            throw new Error("No host defined in config");
-        }
-        return reply.send(generateShardList(config.host));
-    });
-
-    webServer.get("/cert", async (_request, reply) => {
-        const config = getServerConfiguration({});
-        if (typeof config.host === "undefined") {
-            throw new Error("No host defined in config");
-        }
-        const certFile = await handleGetCert(config);
-        reply.header("Content-Type", "text/plain");
-        reply.header("Content-Disposition", "attachment; filename=cert.crt");
-        reply.send(certFile);
-    });
-
-    webServer.get("/key", async (_request, reply) => {
-        const config = getServerConfiguration({});
-        if (typeof config.host === "undefined") {
-            throw new Error("No host defined in config");
-        }
-        const keyFile = await handleGetKey(config);
-        reply.header("Content-Type", "text/plain");
-        reply.header("Content-Disposition", "attachment; filename=pub.key");
-        reply.send(keyFile);
-    });
-
-    webServer.get("/registry", (_request, reply) => {
-        const config = getServerConfiguration({});
-        if (typeof config.host === "undefined") {
-            throw new Error("No host defined in config");
-        }
-        const regFile = handleGetRegistry(config);
-        reply.header("Content-Type", "text/plain");
-        reply.header("Content-Disposition", "attachment; filename=client.reg");
-        reply.send(regFile);
-    });
+  webServer.get("/registry", (_request, reply) => {
+    const config = getServerConfiguration({});
+    if (typeof config.host === "undefined") {
+      throw new Error("No host defined in config");
+    }
+    const regFile = handleGetRegistry(config);
+    reply.header("Content-Type", "text/plain");
+    reply.header("Content-Disposition", "attachment; filename=client.reg");
+    reply.send(regFile);
+  });
 }
