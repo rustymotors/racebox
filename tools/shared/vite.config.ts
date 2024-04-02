@@ -1,7 +1,8 @@
 import { defineConfig } from "vitest/config";
 
-const x=process.env.PWD.split('/');
-const moduleName = `rm-${x[x.length-1]}`;
+const x=process.env.PWD ?? __dirname;
+const y = x.split('/');
+const moduleName = `rm-${y[y.length-1]}`;
 
 export default defineConfig({
     test: {
