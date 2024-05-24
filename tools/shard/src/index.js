@@ -22,15 +22,14 @@ import { readFile } from "node:fs/promises";
  * @return {string}
  */
 export async function handleGetCert(config) {
-    if (config.certificateFile === undefined) {
-        throw new Error("Certificate file not defined");
-    }
-    try {
-        return await readFile(config.certificateFile, "utf8");
-    }
-    catch (err) {
-        throw new Error(`Error reading certificate file: ${String(err)}`);
-    }
+  if (config.certificateFile === undefined) {
+    throw new Error("Certificate file not defined");
+  }
+  try {
+    return await readFile(config.certificateFile, "utf8");
+  } catch (err) {
+    throw new Error(`Error reading certificate file: ${String(err)}`);
+  }
 }
 /**
  * Generate Windows registry configuration file for clients
@@ -38,11 +37,11 @@ export async function handleGetCert(config) {
  * @return {string}
  */
 export function handleGetRegistry(config) {
-    const externalHost = config.host;
-    const patchHost = externalHost;
-    const authHost = externalHost;
-    const shardHost = externalHost;
-    return `Windows Registry Editor Version 5.00
+  const externalHost = config.host;
+  const patchHost = externalHost;
+  const authHost = externalHost;
+  const shardHost = externalHost;
+  return `Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\\SOFTWARE\\WOW6432Node\\EACom\\AuthAuth]
 "AuthLoginBaseService"="AuthLogin"
@@ -76,13 +75,12 @@ export function handleGetRegistry(config) {
  * @return {string}
  */
 export async function handleGetKey(config) {
-    if (config.publicKeyFile === undefined) {
-        throw new Error("Public key file not defined");
-    }
-    try {
-        return await readFile(config.publicKeyFile, "utf8");
-    }
-    catch (err) {
-        throw new Error(`Error reading public key file: ${String(err)}`);
-    }
+  if (config.publicKeyFile === undefined) {
+    throw new Error("Public key file not defined");
+  }
+  try {
+    return await readFile(config.publicKeyFile, "utf8");
+  } catch (err) {
+    throw new Error(`Error reading public key file: ${String(err)}`);
+  }
 }
