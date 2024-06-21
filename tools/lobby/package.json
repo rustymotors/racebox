@@ -22,7 +22,7 @@
     "rimraf": "~5.0.5",
     "typescript": "~5.4.3",
     "vitest": "~1.4.0",
-    "@sentry/node": "~7.109.0",
+    "@sentry/node": "~7.118.0",
     "@vitest/coverage-v8": "~1.4.0"
   },
   "dependencies": {
