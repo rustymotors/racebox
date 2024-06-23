@@ -29,7 +29,7 @@
     "rm-database": "workspace:*",
     "rm-shared": "workspace:*",
     "rm-persona": "workspace:*",
-    "@fastify/sensible": "~5.5.0",
+    "@fastify/sensible": "~5.6.0",
     "fastify": "~4.26.2",
     "rm-shard": "workspace:*",
     "rm-patch": "workspace:*",
