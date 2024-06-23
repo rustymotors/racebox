@@ -30,7 +30,7 @@
     "rm-shared": "workspace:*",
     "rm-persona": "workspace:*",
     "@fastify/sensible": "~5.5.0",
-    "fastify": "~4.26.2",
+    "fastify": "~4.28.0",
     "rm-shard": "workspace:*",
     "rm-patch": "workspace:*",
     "rm-cli": "workspace:*",
