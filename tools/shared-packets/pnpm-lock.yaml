@@ -18,8 +18,8 @@ devDependencies:
     specifier: ~5.0.5
     version: 5.0.5
   typescript:
-    specifier: ~5.4.3
-    version: 5.4.3
+    specifier: ~5.6.0
+    version: 5.6.2
   vitest:
     specifier: ~1.6.0
     version: 1.6.0(@types/node@20.12.12)
@@ -1215,8 +1215,8 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /typescript@5.4.3:
-    resolution: {integrity: sha512-KrPd3PKaCLr78MalgiwJnA25Nm8HAmdwN3mYUYZgG/wizIo9EainNVQI9/yDavtVFRN2h3k8uf3GLHuhDMgEHg==}
+  /typescript@5.6.2:
+    resolution: {integrity: sha512-NW8ByodCSNCwZeghjN3o+JX5OFH0Ojg6sadjEKY4huZ52TqbJTJnDo5+Tw98lSy63NZvi4n+ez5m2u5d4PkZyw==}
     engines: {node: '>=14.17'}
     hasBin: true
     dev: true
