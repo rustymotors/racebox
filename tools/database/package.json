@@ -21,9 +21,9 @@
     "@types/node": "~20.12.2",
     "rimraf": "~5.0.5",
     "typescript": "~5.4.3",
-    "vitest": "~1.6.0",
+    "vitest": "~2.1.0",
     "@sentry/node": "~7.118.0",
-    "@vitest/coverage-v8": "~1.6.0"
+    "@vitest/coverage-v8": "~2.1.0"
   },
   "dependencies": {
     "slonik": "^40.0.0",
