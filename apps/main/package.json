@@ -25,6 +25,6 @@
       "rm-shared": "workspace:*",
       "rm-gateway": "workspace:*",
       "@sentry/profiling-node": "~7.118.0",
-      "pino-pretty": "~11.0.0"
+      "pino-pretty": "~11.3.0"
     }
 }
