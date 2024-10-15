@@ -28,6 +28,6 @@
       "pino": "~8.21.0",
       "rm-shared": "workspace:*",
       "rm-core": "workspace:*",
-      "pino-pretty": "~11.0.0"
+      "pino-pretty": "~11.3.0"
     }
 }
