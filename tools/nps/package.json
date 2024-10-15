@@ -24,7 +24,7 @@
         "vitest": "~1.6.0",
         "@vitest/coverage-v8": "~1.6.0"
     },
-    "dependencies": {"@sentry/node":"~7.118.0","short-unique-id":"~5.0.3","pino":"~8.21.0","rm-shared":"workspace:*"
+    "dependencies": {"@sentry/node":"~7.118.0","short-unique-id":"~5.0.3","pino":"~9.5.0","rm-shared":"workspace:*"
 
     }
 }
