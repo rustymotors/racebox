@@ -18,7 +18,7 @@
   "license": "",
   "devDependencies": {
     "@tsconfig/node20": "~20.1.4",
-    "@types/node": "~20.12.2",
+    "@types/node": "~20.17.0",
     "rimraf": "~5.0.5",
     "typescript": "~5.4.3",
     "vitest": "~1.6.0",
